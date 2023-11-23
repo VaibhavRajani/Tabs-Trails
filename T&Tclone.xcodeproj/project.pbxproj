@@ -18,6 +18,7 @@
 		2F9E71DA2B01A9700027A0AF /* T_TcloneUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71D92B01A9700027A0AF /* T_TcloneUITestsLaunchTests.swift */; };
 		2F9E71F12B01A9EA0027A0AF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71F02B01A9EA0027A0AF /* DataController.swift */; };
 		2F9E71F42B01A9F70027A0AF /* TripModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71F22B01A9F70027A0AF /* TripModel.xcdatamodeld */; };
+		2FCB94332B102B08002DB089 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB94322B102B08002DB089 /* MailView.swift */; };
 		2FE2ABCF2B0ED0C200C38809 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCB2B0ED0C200C38809 /* Trip+CoreDataProperties.swift */; };
 		2FE2ABD02B0ED0C200C38809 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */; };
 		2FE2ABD12B0ED0C200C38809 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */; };
@@ -64,6 +65,7 @@
 		2F9E71D92B01A9700027A0AF /* T_TcloneUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_TcloneUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2F9E71F02B01A9EA0027A0AF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2F9E71F32B01A9F70027A0AF /* TripModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripModel.xcdatamodel; sourceTree = "<group>"; };
+		2FCB94322B102B08002DB089 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
 		2FE2ABCB2B0ED0C200C38809 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				2FF23B9B2B0D0DA700734FAF /* ExpensesView.swift */,
 				2FF23B9D2B0E670600734FAF /* AddExpenseView.swift */,
 				2FE2ABDF2B0EE56400C38809 /* SettleUpView.swift */,
+				2FCB94322B102B08002DB089 /* MailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -156,6 +159,7 @@
 				2FE2ABDD2B0ED32900C38809 /* Trip+CoreDataClass.swift */,
 				2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */,
 				2F316BE22B01AB4F00A7675D /* Helpers */,
+				2FCB94342B102F23002DB089 /* ViewModel */,
 				2F316BE12B01AB4700A7675D /* Views */,
 				2F9E71EB2B01A9B10027A0AF /* DataModel */,
 				2F9E71C02B01A9700027A0AF /* Assets.xcassets */,
@@ -197,6 +201,13 @@
 				2F9E71F22B01A9F70027A0AF /* TripModel.xcdatamodeld */,
 			);
 			path = DataModel;
+			sourceTree = "<group>";
+		};
+		2FCB94342B102F23002DB089 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -336,6 +347,7 @@
 				2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */,
 				2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */,
 				2FF23B982B02F4EB00734FAF /* TripPeopleView.swift in Sources */,
+				2FCB94332B102B08002DB089 /* MailView.swift in Sources */,
 				2FE2ABE02B0EE56400C38809 /* SettleUpView.swift in Sources */,
 				2FE2ABDE2B0ED32900C38809 /* Trip+CoreDataClass.swift in Sources */,
 				2FE2ABD62B0ED23600C38809 /* Expense+CoreDataClass.swift in Sources */,
