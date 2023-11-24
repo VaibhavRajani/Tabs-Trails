@@ -18,6 +18,15 @@ struct AddExpenseView: View {
     @State private var amount: String = ""
     @State private var customSplit: Bool = false
     @State private var shares: [UUID: Double] = [:]
+    @State private var showingImagePicker = false
+    @State private var inputImage: UIImage?
+    @State private var receiptImageData: Data?
+    
+    func loadImage() {
+        guard let inputImage = inputImage else { return }
+        receiptImageData = inputImage.jpegData(compressionQuality: 1.0)
+    }
+    
     
     var body: some View {
         Form {
@@ -56,85 +65,46 @@ struct AddExpenseView: View {
                                 .keyboardType(.decimalPad)
                         }
                     }
+                    Spacer()
+                        .frame(height: 20)
+                        .background(Color.gray.opacity(0.2))
+                    Section(header: Text("Receipt")) {
+                        Button("Add Picture") {
+                            showingImagePicker = true
+                        }
+                        if let imageData = receiptImageData, let uiImage = UIImage(data: imageData) {
+                            Image(uiImage: uiImage)
+                                .resizable()
+                                .scaledToFit()
+                        } else {
+                            Text("No receipt image available")
+                        }
+                    }
+                    .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                        ImagePicker(isShown: $showingImagePicker, image: $inputImage)
+                    }
                 }
             }
+            .sheet(isPresented: $showingImagePicker, onDismiss: loadImage) {
+                ImagePicker(isShown: $showingImagePicker, image: $inputImage)
+            }
+            
             
             Button("Add Expense") {
+                guard let amountDouble = Double(amount), let payerID = paidBy?.id else { return }; let payer = paidBy;
+                
                 if customSplit {
-                    addCustomSplitExpense()
+                    ExpenseController.addCustomSplitExpense(to: trip, name: expenseName, amount: amountDouble, paidBy: paidBy ?? Person(), customSplit: true, shares: shares, imageData: receiptImageData, context: managedObjContext)
+                    
                 } else {
-                    addExpense()
+                    ExpenseController.addExpense(to: trip, name: expenseName, amount: amountDouble, paidBy: paidBy ?? Person(), customSplit: false, shares: [:], imageData: receiptImageData, context: managedObjContext)
                 }
+                saveBalances()
+                
                 presentationMode.wrappedValue.dismiss()
             }
         }
         .navigationTitle("Add An Expense")
-    }
-    
-    func addExpense() {
-        guard let amountDouble = Double(amount), let payerID = paidBy?.id else { return }; let payer = paidBy;
-        if trip.balances.isEmpty {
-            trip.peopleArray.forEach { person in
-                trip.balances[person.id!] = 0
-            }
-        }
-        let newExpense = Expense(context: managedObjContext)
-        newExpense.id = UUID()
-        newExpense.name = expenseName
-        newExpense.amount = amountDouble
-        newExpense.person = payer
-        trip.addToExpense(newExpense)
-        
-        let splitAmount = amountDouble / Double(trip.peopleArray.count)
-        for person in trip.peopleArray {
-            if person.id == payerID {
-                trip.balances[payerID, default: 0] += amountDouble - splitAmount
-            } else {
-                trip.balances[person.id!, default: 0] -= splitAmount
-            }
-        }
-        print(expenseName)
-        
-        saveBalances()
-        // Save the changes to the context
-        DataController().save(context: managedObjContext)
-    }
-    
-    func addCustomSplitExpense() {
-        
-        guard let totalAmountDouble = Double(amount), let payerID = paidBy?.id else { return }; let payer = paidBy;
-        if trip.balances.isEmpty {
-            trip.peopleArray.forEach { person in
-                trip.balances[person.id!] = 0
-            }
-        }
-        
-        let newExpense = Expense(context: managedObjContext)
-        newExpense.id = UUID()
-        newExpense.name = expenseName
-        newExpense.amount = totalAmountDouble
-        newExpense.person = payer
-        trip.addToExpense(newExpense)
-        let customSplitTotal = shares.values.reduce(0, +)
-        
-        guard customSplitTotal == totalAmountDouble else {
-            print("Custom split amounts do not total up to the expense amount.")
-            return
-        }
-        
-        for person in trip.peopleArray {
-            if let share = shares[person.id!] {
-                if person.id == payerID {
-                    trip.balances[payerID, default: 0] += totalAmountDouble - share
-                } else {
-                    trip.balances[person.id!, default: 0] -= share
-                }
-            }
-            print(expenseName)
-        }
-        saveBalances()
-        
-        DataController().save(context: managedObjContext)
     }
     
     func saveBalances() {

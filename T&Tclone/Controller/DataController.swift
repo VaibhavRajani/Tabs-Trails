@@ -11,7 +11,7 @@ import CoreData
 class DataController: ObservableObject {
     let container = NSPersistentContainer(name: "TripModel")
     
-    init(){
+    init(inMemory: Bool = false){
         container.loadPersistentStores{ desc, error in
             if let error = error {
                 print("Failed to load data \(error.localizedDescription)")
@@ -46,11 +46,12 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addPerson(firstName: String, lastName: String, context: NSManagedObjectContext) {
+    func addPerson(firstName: String, lastName: String, email: String, context: NSManagedObjectContext) {
         let newPerson = Person(context: context)
         newPerson.id = UUID()
         newPerson.firstName = firstName
         newPerson.lastName = lastName
+        newPerson.email = email
         
         save(context: context)
     }

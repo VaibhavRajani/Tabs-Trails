@@ -7,6 +7,7 @@
 
 import XCTest
 @testable import T_Tclone
+import CoreData
 
 final class T_TcloneTests: XCTestCase {
 
@@ -32,5 +33,39 @@ final class T_TcloneTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    func testAddTrip() {
+        let dataController = DataController(inMemory: true)
+        let tripName = "Test Trip"
+        let startDate = Date()
+        let endDate = Date().addingTimeInterval(24 * 60 * 60) // 1 day later
 
+        dataController.addTrip(name: tripName, startDate: startDate, endDate: endDate, context: dataController.container.viewContext)
+
+        let fetchRequest: NSFetchRequest<Trip> = Trip.fetchRequest()
+        let trips = try? dataController.container.viewContext.fetch(fetchRequest)
+
+        XCTAssertEqual(trips?.count, 1)
+        XCTAssertEqual(trips?.first?.name, tripName)
+        XCTAssertEqual(trips?.first?.startDate, startDate)
+        XCTAssertEqual(trips?.first?.endDate, endDate)
+    }
+    
+    func testAddPerson() {
+        let dataController = DataController()
+        let personName = "John Doe"
+        
+        dataController.addPerson(firstName: "John", lastName: "Doe", email: "john@example.com", context: dataController.container.viewContext)
+
+        let fetchRequest: NSFetchRequest<Person> = Person.fetchRequest()
+        let persons = try? dataController.container.viewContext.fetch(fetchRequest)
+
+        XCTAssertEqual(persons?.count, 1)
+        XCTAssertEqual(persons?.first?.fullName, personName)
+    }
+    
+}
+extension Person {
+    var fullName: String {
+        [firstName, lastName].compactMap { $0 }.joined(separator: " ")
+    }
 }

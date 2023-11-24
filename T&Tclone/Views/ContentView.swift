@@ -13,59 +13,75 @@ struct ContentView: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var trip: FetchedResults<Trip>
     
     @State private var showingAddView = false
+    @State private var showingSettingsView = false
     
     var body: some View {
-        NavigationView {
-            VStack(alignment: .leading) {
-                List {
-                    ForEach(trip) { trip in
-                        NavigationLink(destination: TripPeopleView(trip: trip)){
-                            HStack{
-                                VStack(alignment: .leading, spacing: 6) {
+            NavigationView {
+                VStack(alignment: .leading) {
+                    List {
+                        ForEach(trip) { trip in
+                            NavigationLink(destination: TripPeopleView(trip: trip)) {
+                                VStack(alignment: .leading, spacing: 10) { // Increased vertical spacing
                                     Text(trip.name!)
                                         .bold()
-                                    HStack{
+                                    HStack {
                                         Text(trip.startDate != nil ? formatDate(trip.startDate!) : "No Date")
                                         Text(" - ")
                                         Text(trip.endDate != nil ? formatDate(trip.endDate!) : "No Date")
                                     }
                                     .font(.caption)
                                     .foregroundColor(.gray)
-                                    
-                                    
                                 }
+                                .padding() // Padding for the rounded border
+                                 // White background for list item
+                                .cornerRadius(10) // Rounded corners
                             }
                         }
+                        .onDelete(perform: deleteTrip)
                     }
-                    .onDelete(perform: deleteTrip)
+                    .cornerRadius(10)
+                    .background(Color.white)
+                    .listStyle(.plain)
                 }
-                .listStyle(.plain)
-                
-            }
-            .navigationTitle("Trips")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        showingAddView.toggle()
-                    } label: {
-                        Label("Add Trip", systemImage: "plus.circle")
+                .navigationTitle("Trips")
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarTrailing) {
+                        Button {
+                            showingAddView.toggle()
+                        } label: {
+                            Label("Add Trip", systemImage: "plus.circle")
+                        }
+                    }
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            showingSettingsView.toggle()
+                        } label: {
+                            Label("Settings", systemImage: "gear")
+                        }
                     }
                 }
-                ToolbarItem(placement: .navigationBarLeading) {
-                    EditButton()
+                .sheet(isPresented: $showingAddView) {
+                    AddTripView()
+                }
+                .sheet(isPresented: $showingSettingsView){
+                    SettingsView()
                 }
             }
-            .sheet(isPresented: $showingAddView){
-                AddTripView()
+            .navigationViewStyle(.stack)
+            .background(Color.gray) // Grey background for the main view
+        }
+
+    private func deleteTrip(offsets: IndexSet) {
+        withAnimation {
+            offsets.map { trip[$0] }.forEach(managedObjContext.delete)
+            do {
+                try managedObjContext.save()
+            } catch {
+                print("Error deleting trip: \(error.localizedDescription)")
             }
         }
-        .navigationViewStyle(.stack)
+    }
 
-    }
-    
-    private func deleteTrip(offsets: IndexSet) {
-        //pass
-    }
 }
 
 #Preview {

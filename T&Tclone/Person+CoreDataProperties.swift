@@ -22,6 +22,7 @@ extension Person {
     @NSManaged public var lastName: String?
     @NSManaged public var expense: NSSet?
     @NSManaged public var trip: NSSet?
+    @NSManaged public var email: String?
     
     public var wrappedName: String {
         firstName ?? "Unknown Person"

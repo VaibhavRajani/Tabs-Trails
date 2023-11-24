@@ -19,7 +19,12 @@ struct AddTripView: View {
     @State private var selectedPerson: Person?
     @State private var selectedPeople = Set<UUID>()
     @State private var currentTrip: Trip?
-    
+    @State private var fullName = ""
+    @State private var email = ""
+    @State private var showAlert = false
+    @State private var alertMessage = ""
+    @State private var showingSelectPersonView = false
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Person.lastName, ascending: true)],
         animation: .default)
@@ -47,75 +52,97 @@ struct AddTripView: View {
                         .datePickerStyle(.compact)
                 }
                 
-                HStack{
-                    Spacer()
-                    Button("Submit") {
-                        DataController().save(context: managedObjContext)
-                        dismiss()
-                    }
-                    Spacer()
-                }
+                
                 
             }
             
-            Section(header: Text("Add New Person")) {
-                TextField("First Name", text: $firstName)
-                TextField("Last Name", text: $lastName)
-                Button("Save Person") {
-                    DataController().addPerson(firstName: firstName, lastName: lastName, context: managedObjContext)
-                }
-            }
-            
-            Section(header: Text("Select Person for Trip")) {
-                List(persons, id: \.self) { person in
-                    HStack {
-                        Text("\(person.firstName ?? "") \(person.lastName ?? "")")
-                        Spacer()
-                        if selectedPerson == person {
-                            Image(systemName: "checkmark")
-                        }
-                    }
-                    .onTapGesture {
-                        if selectedPeople.contains(person.id!) {
-                            selectedPeople.remove(person.id!)
-                        } else {
-                            selectedPeople.insert(person.id!)
-                        }
-                    }
-                }
-            }
-            
-            Button("Add to Trip") {
-                for personId in selectedPeople {
-                    if let person = persons.first(where: { $0.id == personId }) {
-                        addPersonToTrip(person: person)
-                    }
-                }
-            }
-            
             if !selectedPeople.isEmpty {
-                Section(header: Text("People Added to Trip")) {
+                Section(header: Text("People")) {
                     ForEach(persons.filter { selectedPeople.contains($0.id!) }, id: \.self) { person in
                         Text("\(person.firstName ?? "") \(person.lastName ?? "")")
                     }
                 }
+            }
+
+            Section(header: Text("Add A Person")) {
+                Button(action: { showingSelectPersonView = true }) {
+                    HStack {
+                        Text(selectedPerson != nil ? "\(selectedPerson!.firstName ?? "") \(selectedPerson!.lastName ?? "")" : "Select Person")
+                        Spacer()
+                    }
+                }
+                .sheet(isPresented: $showingSelectPersonView) {
+                    SelectPersonView(selectedPerson: $selectedPerson, context: .trip, people: Array(persons))
+                }
+
+                if let person = selectedPerson {
+                    HStack {
+                        Spacer()
+                        Button("Add Person") {
+                            if !selectedPeople.contains(person.id!) {
+                                selectedPeople.insert(person.id!)
+                                addPersonToTrip(person: person)
+                                selectedPerson = nil
+                            }
+                        }
+                        .buttonStyle(BlueButtonStyle())
+                        Spacer()
+                    }
+                }
+            }
+            
+            Section(header: Text("Add New Person")) {
+                TextField("First Name Last Name", text: $fullName)
+                TextField("Email", text: $email)
+                    .autocapitalization(.none)
+                    .keyboardType(.emailAddress)
+                Button("Add New Person") {
+                    let names = fullName.split(separator: " ").map(String.init)
+                    let firstName = names.first ?? ""
+                    let lastName = names.dropFirst().joined(separator: " ")
+
+                    if firstName.isEmpty || lastName.isEmpty || email.isEmpty {
+                        alertMessage = "All fields must be filled."
+                        showAlert = true
+                    } else {
+                        DataController().addPerson(firstName: firstName, lastName: lastName, email: email, context: managedObjContext)
+                        fullName = ""
+                        email = ""
+                    }
+                }
+                .alert(isPresented: $showAlert) {
+                    Alert(title: Text("Invalid Input"), message: Text(alertMessage), dismissButton: .default(Text("OK")))
+                }
+                .buttonStyle(BlueButtonStyle())
+
+            }
+
+
+            
+            HStack{
+                Spacer()
+                Button("Add Trip") {
+                    DataController().save(context: managedObjContext)
+                    dismiss()
+                }
+                .buttonStyle(BlueButtonStyle())
+                Spacer()
             }
         }
     }
     
     private func addPersonToTrip(person: Person) {
         if currentTrip == nil {
-            currentTrip = Trip(context: managedObjContext) 
+            currentTrip = Trip(context: managedObjContext)
             currentTrip!.id = UUID()
             currentTrip!.name = name
             currentTrip!.startDate = startDate
             currentTrip!.endDate = endDate
-            let selectedPeopleObjects = persons.filter { selectedPeople.contains($0.id!) }
-            DataController().addPeopleToTrip(people: Set(selectedPeopleObjects), trip: currentTrip!, context: managedObjContext)
-        } else {
-            print("Error Adding to Trip")
         }
+        currentTrip!.addToPerson(person)
+        selectedPeople.insert(person.id!)
     }
+
 }
 
 struct AddTripView_Previews: PreviewProvider {

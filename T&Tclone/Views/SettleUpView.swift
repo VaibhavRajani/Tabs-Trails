@@ -35,6 +35,7 @@ struct SettleUpView: View {
                     print("Device not supported.")
                 }
             }
+            
             .padding()
         }
         .navigationTitle("Settle Up!")

@@ -21,7 +21,10 @@ extension Expense {
     @NSManaged public var name: String?
     @NSManaged public var person: Person?
     @NSManaged public var trip: Trip?
-
+    @NSManaged public var image: Data?
+    @NSManaged public var date: Date?
+    @NSManaged public var shares: String?
+    @NSManaged public var customSplit: Bool
 }
 
 extension Expense : Identifiable {
