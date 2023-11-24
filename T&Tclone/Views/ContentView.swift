@@ -59,6 +59,8 @@ struct ContentView: View {
                 AddTripView()
             }
         }
+        .navigationViewStyle(.stack)
+
     }
     
     private func deleteTrip(offsets: IndexSet) {

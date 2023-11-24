@@ -19,6 +19,9 @@
 		2F9E71F12B01A9EA0027A0AF /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71F02B01A9EA0027A0AF /* DataController.swift */; };
 		2F9E71F42B01A9F70027A0AF /* TripModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71F22B01A9F70027A0AF /* TripModel.xcdatamodeld */; };
 		2FCB94332B102B08002DB089 /* MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB94322B102B08002DB089 /* MailView.swift */; };
+		2FCB94382B103103002DB089 /* AddTripViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB94372B103103002DB089 /* AddTripViewModel.swift */; };
+		2FCB943A2B10363F002DB089 /* AddTripModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB94392B10363F002DB089 /* AddTripModel.swift */; };
+		2FCB943C2B106EC2002DB089 /* SettlementCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FCB943B2B106EC2002DB089 /* SettlementCalculator.swift */; };
 		2FE2ABCF2B0ED0C200C38809 /* Trip+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCB2B0ED0C200C38809 /* Trip+CoreDataProperties.swift */; };
 		2FE2ABD02B0ED0C200C38809 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */; };
 		2FE2ABD12B0ED0C200C38809 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */; };
@@ -66,6 +69,9 @@
 		2F9E71F02B01A9EA0027A0AF /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		2F9E71F32B01A9F70027A0AF /* TripModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TripModel.xcdatamodel; sourceTree = "<group>"; };
 		2FCB94322B102B08002DB089 /* MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailView.swift; sourceTree = "<group>"; };
+		2FCB94372B103103002DB089 /* AddTripViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripViewModel.swift; sourceTree = "<group>"; };
+		2FCB94392B10363F002DB089 /* AddTripModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripModel.swift; sourceTree = "<group>"; };
+		2FCB943B2B106EC2002DB089 /* SettlementCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettlementCalculator.swift; sourceTree = "<group>"; };
 		2FE2ABCB2B0ED0C200C38809 /* Trip+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -124,6 +130,7 @@
 			isa = PBXGroup;
 			children = (
 				2F316BE72B01BB1A00A7675D /* TimeFormat.swift */,
+				2FCB943B2B106EC2002DB089 /* SettlementCalculator.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -199,6 +206,7 @@
 			children = (
 				2F9E71F02B01A9EA0027A0AF /* DataController.swift */,
 				2F9E71F22B01A9F70027A0AF /* TripModel.xcdatamodeld */,
+				2FCB94392B10363F002DB089 /* AddTripModel.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -206,6 +214,7 @@
 		2FCB94342B102F23002DB089 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2FCB94372B103103002DB089 /* AddTripViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -342,7 +351,10 @@
 			files = (
 				2FE2ABCF2B0ED0C200C38809 /* Trip+CoreDataProperties.swift in Sources */,
 				2F9E71F42B01A9F70027A0AF /* TripModel.xcdatamodeld in Sources */,
+				2FCB943C2B106EC2002DB089 /* SettlementCalculator.swift in Sources */,
+				2FCB943A2B10363F002DB089 /* AddTripModel.swift in Sources */,
 				2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */,
+				2FCB94382B103103002DB089 /* AddTripViewModel.swift in Sources */,
 				2F9E71F12B01A9EA0027A0AF /* DataController.swift in Sources */,
 				2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */,
 				2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */,
@@ -530,6 +542,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -559,6 +572,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
