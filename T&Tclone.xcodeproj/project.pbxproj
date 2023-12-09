@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F1244C32B241B0C000CB7EE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C22B241B0B000CB7EE /* Expense+CoreDataClass.swift */; };
+		2F1244C52B241B16000CB7EE /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */; };
 		2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE32B01AB6400A7675D /* AddTripView.swift */; };
 		2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE72B01BB1A00A7675D /* TimeFormat.swift */; };
 		2F9E71BD2B01A96E0027A0AF /* T_TcloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */; };
@@ -32,9 +34,6 @@
 		2FE2ABD02B0ED0C200C38809 /* Person+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */; };
 		2FE2ABD12B0ED0C200C38809 /* Person+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */; };
 		2FE2ABD22B0ED0C200C38809 /* Expense+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABCE2B0ED0C200C38809 /* Expense+CoreDataProperties.swift */; };
-		2FE2ABD62B0ED23600C38809 /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABD32B0ED23600C38809 /* Expense+CoreDataClass.swift */; };
-		2FE2ABDC2B0ED32300C38809 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABDB2B0ED32300C38809 /* Trip+CoreDataClass.swift */; };
-		2FE2ABDE2B0ED32900C38809 /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABDD2B0ED32900C38809 /* Trip+CoreDataClass.swift */; };
 		2FE2ABE02B0EE56400C38809 /* SettleUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FE2ABDF2B0EE56400C38809 /* SettleUpView.swift */; };
 		2FF23B982B02F4EB00734FAF /* TripPeopleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF23B972B02F4EB00734FAF /* TripPeopleView.swift */; };
 		2FF23B9A2B0D002500734FAF /* SelectPersonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2FF23B992B0D002500734FAF /* SelectPersonView.swift */; };
@@ -60,6 +59,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F1244C22B241B0B000CB7EE /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2F316BE32B01AB6400A7675D /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		2F316BE72B01BB1A00A7675D /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		2F9E71B92B01A96E0027A0AF /* T&Tclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T&Tclone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,9 +89,6 @@
 		2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Person+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		2FE2ABCE2B0ED0C200C38809 /* Expense+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		2FE2ABD32B0ED23600C38809 /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Expense+CoreDataClass.swift"; path = "../../Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2FE2ABDB2B0ED32300C38809 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataClass.swift"; path = "../../Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
-		2FE2ABDD2B0ED32900C38809 /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Trip+CoreDataClass.swift"; path = "../../Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2FE2ABDF2B0EE56400C38809 /* SettleUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettleUpView.swift; sourceTree = "<group>"; };
 		2FF23B972B02F4EB00734FAF /* TripPeopleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TripPeopleView.swift; sourceTree = "<group>"; };
 		2FF23B992B0D002500734FAF /* SelectPersonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPersonView.swift; sourceTree = "<group>"; };
@@ -177,12 +175,12 @@
 		2F9E71BB2B01A96E0027A0AF /* T&Tclone */ = {
 			isa = PBXGroup;
 			children = (
-				2FE2ABD32B0ED23600C38809 /* Expense+CoreDataClass.swift */,
+				2F1244C22B241B0B000CB7EE /* Expense+CoreDataClass.swift */,
 				2FE2ABCB2B0ED0C200C38809 /* Trip+CoreDataProperties.swift */,
 				2FE2ABCC2B0ED0C200C38809 /* Person+CoreDataClass.swift */,
 				2FE2ABCD2B0ED0C200C38809 /* Person+CoreDataProperties.swift */,
+				2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */,
 				2FE2ABCE2B0ED0C200C38809 /* Expense+CoreDataProperties.swift */,
-				2FE2ABDD2B0ED32900C38809 /* Trip+CoreDataClass.swift */,
 				2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */,
 				2F316BE22B01AB4F00A7675D /* Helpers */,
 				2F316BE12B01AB4700A7675D /* Views */,
@@ -212,7 +210,6 @@
 		2F9E71D62B01A9700027A0AF /* T&TcloneUITests */ = {
 			isa = PBXGroup;
 			children = (
-				2FE2ABDB2B0ED32300C38809 /* Trip+CoreDataClass.swift */,
 				2F9E71D72B01A9700027A0AF /* T_TcloneUITests.swift */,
 				2F9E71D92B01A9700027A0AF /* T_TcloneUITestsLaunchTests.swift */,
 			);
@@ -366,9 +363,11 @@
 				2FCB943C2B106EC2002DB089 /* SettlementCalculator.swift in Sources */,
 				2FCCA8652B1A6CE200046240 /* ImagePickerView.swift in Sources */,
 				2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */,
+				2F1244C52B241B16000CB7EE /* Trip+CoreDataClass.swift in Sources */,
 				2F9E71F12B01A9EA0027A0AF /* DataController.swift in Sources */,
 				2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */,
 				2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */,
+				2F1244C32B241B0C000CB7EE /* Expense+CoreDataClass.swift in Sources */,
 				2FDA73D52B221E2600C30DBD /* ExpenseController.swift in Sources */,
 				2FDA73D32B2213AF00C30DBD /* ExpenseSplitCalculator.swift in Sources */,
 				2FCB943E2B107192002DB089 /* ButtonStyle.swift in Sources */,
@@ -377,8 +376,6 @@
 				2FCB94332B102B08002DB089 /* MailView.swift in Sources */,
 				2FE2ABE02B0EE56400C38809 /* SettleUpView.swift in Sources */,
 				2FCB94402B107273002DB089 /* BlueNavigationLink.swift in Sources */,
-				2FE2ABDE2B0ED32900C38809 /* Trip+CoreDataClass.swift in Sources */,
-				2FE2ABD62B0ED23600C38809 /* Expense+CoreDataClass.swift in Sources */,
 				2F9E71BD2B01A96E0027A0AF /* T_TcloneApp.swift in Sources */,
 				2FE2ABD02B0ED0C200C38809 /* Person+CoreDataClass.swift in Sources */,
 				2FF23B9E2B0E670600734FAF /* AddExpenseView.swift in Sources */,
@@ -402,7 +399,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F9E71DA2B01A9700027A0AF /* T_TcloneUITestsLaunchTests.swift in Sources */,
-				2FE2ABDC2B0ED32300C38809 /* Trip+CoreDataClass.swift in Sources */,
 				2F9E71D82B01A9700027A0AF /* T_TcloneUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
