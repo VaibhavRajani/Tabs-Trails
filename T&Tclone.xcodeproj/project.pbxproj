@@ -130,8 +130,7 @@
 			children = (
 				2F1244C72B241F5A000CB7EE /* MailComposer.swift */,
 			);
-			name = Model;
-			path = ../Model;
+			path = Model;
 			sourceTree = "<group>";
 		};
 		2F316BE12B01AB4700A7675D /* Views */ = {
@@ -155,6 +154,7 @@
 		2F316BE22B01AB4F00A7675D /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				2F1244C62B241F24000CB7EE /* Model */,
 				2F316BE72B01BB1A00A7675D /* TimeFormat.swift */,
 				2FCB943B2B106EC2002DB089 /* SettlementCalculator.swift */,
 				2FCB943D2B107192002DB089 /* ButtonStyle.swift */,
@@ -195,7 +195,6 @@
 				2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */,
 				2FE2ABCE2B0ED0C200C38809 /* Expense+CoreDataProperties.swift */,
 				2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */,
-				2F1244C62B241F24000CB7EE /* Model */,
 				2F316BE22B01AB4F00A7675D /* Helpers */,
 				2F316BE12B01AB4700A7675D /* Views */,
 				2F9E71EB2B01A9B10027A0AF /* Controller */,
