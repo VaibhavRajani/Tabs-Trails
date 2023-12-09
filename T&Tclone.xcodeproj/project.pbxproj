@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		2F1244C32B241B0C000CB7EE /* Expense+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C22B241B0B000CB7EE /* Expense+CoreDataClass.swift */; };
 		2F1244C52B241B16000CB7EE /* Trip+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */; };
+		2F1244C82B241F5A000CB7EE /* MailComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C72B241F5A000CB7EE /* MailComposer.swift */; };
+		2F1244CA2B241F75000CB7EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C92B241F75000CB7EE /* Coordinator.swift */; };
 		2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE32B01AB6400A7675D /* AddTripView.swift */; };
 		2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE72B01BB1A00A7675D /* TimeFormat.swift */; };
 		2F9E71BD2B01A96E0027A0AF /* T_TcloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */; };
@@ -61,6 +63,8 @@
 /* Begin PBXFileReference section */
 		2F1244C22B241B0B000CB7EE /* Expense+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Expense+CoreDataClass.swift"; sourceTree = "<group>"; };
 		2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Trip+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2F1244C72B241F5A000CB7EE /* MailComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MailComposer.swift; sourceTree = "<group>"; };
+		2F1244C92B241F75000CB7EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2F316BE32B01AB6400A7675D /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		2F316BE72B01BB1A00A7675D /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
 		2F9E71B92B01A96E0027A0AF /* T&Tclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T&Tclone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -121,6 +125,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F1244C62B241F24000CB7EE /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2F1244C72B241F5A000CB7EE /* MailComposer.swift */,
+			);
+			name = Model;
+			path = ../Model;
+			sourceTree = "<group>";
+		};
 		2F316BE12B01AB4700A7675D /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -182,6 +195,7 @@
 				2F1244C42B241B16000CB7EE /* Trip+CoreDataClass.swift */,
 				2FE2ABCE2B0ED0C200C38809 /* Expense+CoreDataProperties.swift */,
 				2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */,
+				2F1244C62B241F24000CB7EE /* Model */,
 				2F316BE22B01AB4F00A7675D /* Helpers */,
 				2F316BE12B01AB4700A7675D /* Views */,
 				2F9E71EB2B01A9B10027A0AF /* Controller */,
@@ -222,6 +236,7 @@
 				2FDA73D42B221E2600C30DBD /* ExpenseController.swift */,
 				2F9E71F02B01A9EA0027A0AF /* DataController.swift */,
 				2F9E71F22B01A9F70027A0AF /* TripModel.xcdatamodeld */,
+				2F1244C92B241F75000CB7EE /* Coordinator.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -368,11 +383,13 @@
 				2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */,
 				2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */,
 				2F1244C32B241B0C000CB7EE /* Expense+CoreDataClass.swift in Sources */,
+				2F1244C82B241F5A000CB7EE /* MailComposer.swift in Sources */,
 				2FDA73D52B221E2600C30DBD /* ExpenseController.swift in Sources */,
 				2FDA73D32B2213AF00C30DBD /* ExpenseSplitCalculator.swift in Sources */,
 				2FCB943E2B107192002DB089 /* ButtonStyle.swift in Sources */,
 				2FF23B982B02F4EB00734FAF /* TripPeopleView.swift in Sources */,
 				2FCCA8672B1A72F000046240 /* ExpenseDetailView.swift in Sources */,
+				2F1244CA2B241F75000CB7EE /* Coordinator.swift in Sources */,
 				2FCB94332B102B08002DB089 /* MailView.swift in Sources */,
 				2FE2ABE02B0EE56400C38809 /* SettleUpView.swift in Sources */,
 				2FCB94402B107273002DB089 /* BlueNavigationLink.swift in Sources */,
