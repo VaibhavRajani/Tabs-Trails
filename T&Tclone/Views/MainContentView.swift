@@ -1,31 +1,21 @@
 //
-//  ContentView.swift
+//  MainContentView.swift
 //  T&Tclone
 //
-//  Created by Vaibhav Rajani on 11/12/23.
+//  Created by Vaibhav Rajani on 5/17/24.
 //
 
+import Foundation
 import SwiftUI
 import CoreData
-import AuthenticationServices
 
-struct ContentView: View {
+struct MainContentView: View {
+    var trip: FetchedResults<Trip>
     @Environment(\.managedObjectContext) var managedObjContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.startDate, order: .reverse)]) var trip: FetchedResults<Trip>
-    @EnvironmentObject var authentication: AuthenticationManager
-    
     @State private var showingAddView = false
     @State private var showingSettingsView = false
     
     var body: some View {
-        if authentication.isAuthenticated {
-            mainContentView
-        } else {
-            LoginView()
-        }
-    }
-    
-    var mainContentView: some View {
         NavigationView {
             VStack(alignment: .leading) {
                 List {
@@ -91,4 +81,3 @@ struct ContentView: View {
         }
     }
 }
-

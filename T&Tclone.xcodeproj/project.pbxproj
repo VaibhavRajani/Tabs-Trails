@@ -13,6 +13,9 @@
 		2F1244CA2B241F75000CB7EE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F1244C92B241F75000CB7EE /* Coordinator.swift */; };
 		2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE32B01AB6400A7675D /* AddTripView.swift */; };
 		2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F316BE72B01BB1A00A7675D /* TimeFormat.swift */; };
+		2F617B5C2BF7FC8B0098BC26 /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F617B5B2BF7FC8B0098BC26 /* AuthenticationManager.swift */; };
+		2F617B5E2BF7FCDE0098BC26 /* MainContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F617B5D2BF7FCDE0098BC26 /* MainContentView.swift */; };
+		2F617B602BF7FD060098BC26 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F617B5F2BF7FD060098BC26 /* LoginView.swift */; };
 		2F9E71BD2B01A96E0027A0AF /* T_TcloneApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */; };
 		2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F9E71BE2B01A96E0027A0AF /* ContentView.swift */; };
 		2F9E71C12B01A9700027A0AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F9E71C02B01A9700027A0AF /* Assets.xcassets */; };
@@ -67,6 +70,9 @@
 		2F1244C92B241F75000CB7EE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		2F316BE32B01AB6400A7675D /* AddTripView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTripView.swift; sourceTree = "<group>"; };
 		2F316BE72B01BB1A00A7675D /* TimeFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeFormat.swift; sourceTree = "<group>"; };
+		2F617B5B2BF7FC8B0098BC26 /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		2F617B5D2BF7FCDE0098BC26 /* MainContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainContentView.swift; sourceTree = "<group>"; };
+		2F617B5F2BF7FD060098BC26 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		2F9E71B92B01A96E0027A0AF /* T&Tclone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "T&Tclone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F9E71BC2B01A96E0027A0AF /* T_TcloneApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = T_TcloneApp.swift; sourceTree = "<group>"; };
 		2F9E71BE2B01A96E0027A0AF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -148,6 +154,8 @@
 				2FCCA8642B1A6CE200046240 /* ImagePickerView.swift */,
 				2FCCA8662B1A72F000046240 /* ExpenseDetailView.swift */,
 				2FF23B9D2B0E670600734FAF /* AddExpenseView.swift */,
+				2F617B5D2BF7FCDE0098BC26 /* MainContentView.swift */,
+				2F617B5F2BF7FD060098BC26 /* LoginView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +169,7 @@
 				2FCB943F2B107273002DB089 /* BlueNavigationLink.swift */,
 				2FDA73D02B22137F00C30DBD /* CurrencyConverter.swift */,
 				2FDA73D22B2213AF00C30DBD /* ExpenseSplitCalculator.swift */,
+				2F617B5B2BF7FC8B0098BC26 /* AuthenticationManager.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -374,11 +383,13 @@
 				2FE2ABCF2B0ED0C200C38809 /* Trip+CoreDataProperties.swift in Sources */,
 				2FDA73D12B22137F00C30DBD /* CurrencyConverter.swift in Sources */,
 				2FCCA8632B1A5E5900046240 /* SettingsView.swift in Sources */,
+				2F617B5C2BF7FC8B0098BC26 /* AuthenticationManager.swift in Sources */,
 				2F9E71F42B01A9F70027A0AF /* TripModel.xcdatamodeld in Sources */,
 				2FCB943C2B106EC2002DB089 /* SettlementCalculator.swift in Sources */,
 				2FCCA8652B1A6CE200046240 /* ImagePickerView.swift in Sources */,
 				2F316BE42B01AB6400A7675D /* AddTripView.swift in Sources */,
 				2F1244C52B241B16000CB7EE /* Trip+CoreDataClass.swift in Sources */,
+				2F617B5E2BF7FCDE0098BC26 /* MainContentView.swift in Sources */,
 				2F9E71F12B01A9EA0027A0AF /* DataController.swift in Sources */,
 				2F316BE82B01BB1A00A7675D /* TimeFormat.swift in Sources */,
 				2F9E71BF2B01A96E0027A0AF /* ContentView.swift in Sources */,
@@ -399,6 +410,7 @@
 				2FE2ABD12B0ED0C200C38809 /* Person+CoreDataProperties.swift in Sources */,
 				2FF23B9A2B0D002500734FAF /* SelectPersonView.swift in Sources */,
 				2FE2ABD22B0ED0C200C38809 /* Expense+CoreDataProperties.swift in Sources */,
+				2F617B602BF7FD060098BC26 /* LoginView.swift in Sources */,
 				2FF23B9C2B0D0DA700734FAF /* ExpensesView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
